@@ -66,7 +66,7 @@ Yoga is a powerful practice for physical and mental well-being, but proper form 
 
 #### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/yoga-ai.git
+git clone https://github.com/keshavgarg119/yoga-ai
 cd yoga-ai
 ```
 
@@ -76,7 +76,7 @@ cd frontend
 npm install
 npm start
 ```
-The app will run on `http://localhost:3000`
+The app will run on `http://localhost:3001`
 
 #### 3. Backend Setup
 ```bash
