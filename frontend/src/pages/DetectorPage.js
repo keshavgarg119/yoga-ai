@@ -15,6 +15,8 @@ export default function DetectorPage() {
   const canvasRef = useRef(null);
   const [webcamActive, setWebcamActive] = useState(false);
   const [webcamStream, setWebcamStream] = useState(null);
+  const [liveMode, setLiveMode] = useState(false);
+  const intervalRef = useRef(null);
 
   // Attach stream to video element when it becomes available
   useEffect(() => {
@@ -106,6 +108,7 @@ export default function DetectorPage() {
       setWebcamStream(null);
     }
     setWebcamActive(false);
+    setLiveMode(false);
   };
 
   const captureAndAnalyze = async () => {
@@ -135,6 +138,24 @@ export default function DetectorPage() {
       }
     }, "image/jpeg");
   };
+
+  // Continuous live detection: Analyze frame every 1.5 seconds when liveMode is ON
+  useEffect(() => {
+    if (liveMode && webcamActive) {
+      intervalRef.current = setInterval(() => {
+        captureAndAnalyze();
+      }, 1500);
+    } else if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [liveMode, webcamActive]);
 
   // -------------------------------
   // UI
@@ -296,7 +317,7 @@ export default function DetectorPage() {
                 {!webcamActive ? (
                   <button onClick={startWebcam} className="btn-start">
                     <Camera size={20} />
-                    <span>Start Live Mode</span>
+                    <span>Start Webcam</span>
                   </button>
                 ) : (
                   <>
@@ -306,11 +327,28 @@ export default function DetectorPage() {
                       className="btn-primary"
                       style={{ flex: 1 }}
                     >
-                      {loading ? "Analyzing..." : "Capture & Analyze"}
+                      {loading ? "Analyzing..." : "📸 Capture & Analyze"}
+                    </button>
+
+                    <button
+                      style={{
+                        backgroundColor: liveMode ? "#ff6b6b" : "#4CAF50",
+                        color: "white",
+                        padding: "0.75rem 1.5rem",
+                        borderRadius: "12px",
+                        border: "none",
+                        cursor: "pointer",
+                        fontWeight: "600",
+                        fontSize: "1rem",
+                        transition: "all 0.2s ease",
+                      }}
+                      onClick={() => setLiveMode((prev) => !prev)}
+                    >
+                      {liveMode ? "⛔ Stop Live Mode" : "▶ Start Live Mode"}
                     </button>
 
                     <button onClick={stopWebcam} className="btn-stop">
-                      Stop
+                      Stop Webcam
                     </button>
                   </>
                 )}
