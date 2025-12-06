@@ -218,7 +218,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Have questions or suggestions? Feel free to:
 - Open an issue on GitHub
 - Submit a pull request
-- Reach out via the Contact page in the app
+- Email: kgarg2_be23@thapar.edu
 
 ---
 
