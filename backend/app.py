@@ -20,3 +20,6 @@ def home():
 async def predict(file: UploadFile = File(...)):
     pose, confidence = predict_pose(file.file)
     return {"pose": pose, "confidence": round(confidence * 100, 2)}
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

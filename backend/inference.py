@@ -1,11 +1,15 @@
 import tensorflow as tf
 import numpy as np
 from PIL import Image
-
-MODEL_PATH = "C:/Users/kesha/Desktop/Yoga/backend/yoga_model_tf"
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "yoga_model_tf")
 CLASS_NAMES = ["downdog", "goddess", "plank", "tree", "warrior2"]
 
-model = tf.saved_model.load(MODEL_PATH)
+try:
+    model = tf.saved_model.load(MODEL_PATH)
+except Exception as e:
+    raise RuntimeError(f"Failed to load TensorFlow model from {MODEL_PATH}: {e}")
 
 infer = model.signatures["serving_default"]
 
