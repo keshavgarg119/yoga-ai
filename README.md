@@ -6,8 +6,12 @@ An intelligent, real-time yoga pose detection application that uses computer vis
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?style=flat&logo=react)](https://reactjs.org/)
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat&logo=python)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Latest-009688?style=flat&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Render Backend](https://img.shields.io/badge/Backend-Live%20on%20Render-brightgreen?style=flat&logo=render)](https://yoga-ai.onrender.com/)
+
+🚀 **Live Backend API**: [https://yoga-ai.onrender.com/](https://yoga-ai.onrender.com/)
 
 ---
+
 
 ## 🌟 Why We Built This
 
