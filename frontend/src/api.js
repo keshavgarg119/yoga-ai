@@ -1,8 +1,10 @@
+const API_BASE_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+
 export async function predictPose(file) {
   const formData = new FormData();
   formData.append("file", file);
 
-  const response = await fetch("http://127.0.0.1:8000/predict", {
+  const response = await fetch(`${API_BASE_URL}/predict`, {
     method: "POST",
     body: formData,
   });
@@ -13,3 +15,4 @@ export async function predictPose(file) {
 
   return response.json();
 }
+
