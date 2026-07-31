@@ -3,14 +3,16 @@
 An intelligent, real-time yoga pose detection application that uses computer vision and machine learning to help users perfect their yoga practice.
 
 ![YogaAI Banner](https://img.shields.io/badge/YogaAI-Pose%20Detection-purple?style=for-the-badge)
-[![React](https://img.shields.io/badge/React-18.x-61DAFB?style=flat&logo=react)](https://reactjs.org/)
-[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat&logo=python)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-Latest-009688?style=flat&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Vercel Frontend](https://img.shields.io/badge/Frontend-Live%20on%20Vercel-000000?style=flat&logo=vercel)](https://yoga-ai-pi.vercel.app/)
 [![Render Backend](https://img.shields.io/badge/Backend-Live%20on%20Render-brightgreen?style=flat&logo=render)](https://yoga-ai.onrender.com/)
+[![React](https://img.shields.io/badge/React-18.x-61DAFB?style=flat&logo=react)](https://reactjs.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Latest-009688?style=flat&logo=fastapi)](https://fastapi.tiangolo.com/)
 
+🌐 **Live Website**: [https://yoga-ai-pi.vercel.app/](https://yoga-ai-pi.vercel.app/)  
 🚀 **Live Backend API**: [https://yoga-ai.onrender.com/](https://yoga-ai.onrender.com/)
 
 ---
+
 
 
 ## 🌟 Why We Built This
