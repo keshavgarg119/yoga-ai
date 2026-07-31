@@ -1,6 +1,7 @@
-fastapi==0.95.2
+fastapi>=0.95.2
 uvicorn[standard]
-tensorflow==2.13.0
-pillow==10.4.0
-numpy==1.24.3
-python-multipart==0.0.9
+tensorflow-cpu>=2.15.0
+pillow>=10.0.0
+numpy>=1.24.0
+python-multipart>=0.0.9
+
